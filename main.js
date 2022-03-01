@@ -22,10 +22,12 @@ async function fetchData(e) {
 
         for(var i = 0, l = data.results.length; i < l; i++) {
             content.innerHTML += `
+            <div id="minion-entry">
             <img src="${data.results[i].image}">
             <h2>${data.results[i].name}</h2>
             <p>${data.results[i].description}</p>
             <i>${data.results[i].enhanced_description}</i>
+            </div>
             `
         }
 
@@ -54,10 +56,12 @@ async function fetchRandom(e) {
         const data = await response.json();
 
         content.innerHTML = `
+        <div id="minion-entry">
         <img src="${data.image}">
         <h2>${data.name}</h2>
         <p>${data.description}</p>
         <i>${data.enhanced_description}</i>
+        </div>
         `
 
 
