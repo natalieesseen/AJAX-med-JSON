@@ -2,24 +2,45 @@
 
 body {
     margin: 0 auto;
-    background-color: rgb(163, 185, 159);
+    background-color: #a3b99f;
     font-family: 'Quicksand', sans-serif;
 }
 
 h1, #minion-search {
     text-align: center;
+    color: white;
+    font-size: 40px;   
 }
 
 button, #input {
-    margin: 10px;
-    padding: 20px;
+    margin: 5px;
+    padding: 10px;
 
     border: none;
     border-radius: 45px;
 }
 
+#input {
+    width: 250px;
+    text-align: center;
+}
+
+::placeholder {
+    font-style: italic;
+}
+
 #fetch-btn {
     width: 150px;
+    color: white;
+    background-color: #253B21;
+}
+
+#random-btn {
+    margin-top: 10px;
+
+    width: 190px;
+    color: white;
+    background-color: #778774;
 }
 
 #content {
@@ -36,9 +57,9 @@ button, #input {
     font-size: 14px;
     
     box-shadow: 
-    0 1px 1px rgba(0,0,0,0.12), 
-    0 2px 2px rgba(0,0,0,0.12), 
-    0 4px 4px rgba(0,0,0,0.12);
+    0 1px 1px rgba(0,0,0,0.1), 
+    0 2px 2px rgba(0,0,0,0.1), 
+    0 4px 4px rgba(0,0,0,0.1);
 }
 
 #minion-entry > img {
