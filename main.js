@@ -3,12 +3,26 @@ const randomBtn = document.getElementById('random-btn');
 const input = document.getElementById('input');
 const content = document.getElementById('content');
 
-fetchBtn.addEventListener('click', fetchData)
+let select = document.getElementById('select-minion')
+
+fetchBtn.addEventListener('click',  fetchData)
+
 async function fetchData(e) {
     e.preventDefault();
 
     try {
-        const response = await fetch('https://ffxivcollect.com/api/minions?name_en_cont=' + input.value)
+
+        let url = ('https://ffxivcollect.com/api/minions?name_en_cont=' + input.value)
+
+        if (select.value == "1-Obedient") {
+            url = ('https://ffxivcollect.com/api/minions?behavior_id_eq=1' + '&name_en_cont=' + input.value)
+        } else if (select.value == "2-Independent") {
+            url = ('https://ffxivcollect.com/api/minions?behavior_id_eq=2' + '&name_en_cont=' + input.value)
+        } else if (select.value == "3-Stationary") {
+            url = ('https://ffxivcollect.com/api/minions?behavior_id_eq=3' + '&name_en_cont=' + input.value)
+        }
+
+        const response = await fetch(url)
 
         if (!response.ok) {
             throw new Error('oops');
@@ -40,7 +54,7 @@ async function fetchData(e) {
 randomBtn.addEventListener('click', fetchRandom)
 
 function getRandom(min, max) {
-    return Math.random() * (302 - 1) + 1;
+    return Math.random() * (433 - 1) + 1;
   }
 
 async function fetchRandom(e) {

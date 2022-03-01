@@ -12,6 +12,14 @@
     <h1>Natalie's FFXIV Minion Finder</h1>
 
     <form id="minion-search">
+
+        <select id="select-minion">
+            <option value="">Search by behavior</option>
+            <option value="1-Obedient">Obedient</option>
+            <option value="2-Independent">Independent</option>
+            <option value="3-Stationary">Stationary</option>            
+        </select>
+        
         <input type="text" id="input" placeholder="Search for a minion ... try &ldquo;Cat&ldquo;" autocomplete="off">
 
         <button id="fetch-btn">Search</button>

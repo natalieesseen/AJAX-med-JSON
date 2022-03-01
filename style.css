@@ -12,12 +12,17 @@ h1, #minion-search {
     font-size: 40px;   
 }
 
-button, #input {
+button, select, #input {
     margin: 5px;
     padding: 10px;
 
     border: none;
     border-radius: 45px;
+}
+
+select {
+    background-color: white;
+    font-style: italic;
 }
 
 #input {
