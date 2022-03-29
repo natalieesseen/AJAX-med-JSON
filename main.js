@@ -6,12 +6,10 @@ const content = document.getElementById('content');
 let select = document.getElementById('select-minion')
 
 fetchBtn.addEventListener('click',  fetchData)
-
 async function fetchData(e) {
     e.preventDefault();
 
     try {
-
         let url = ('https://ffxivcollect.com/api/minions?name_en_cont=' + input.value)
 
         if (select.value == "1-Obedient") {
@@ -29,11 +27,9 @@ async function fetchData(e) {
         }
 
         const data = await response.json();
-
-        console.log(data)
-
+        
         content.innerHTML = '';
-
+        
         for(var i = 0, l = data.results.length; i < l; i++) {
             content.innerHTML += `
             <div id="minion-entry">
@@ -44,11 +40,10 @@ async function fetchData(e) {
             </div>
             `
         }
-
+        
     } catch (error) {
         console.log(error)
     }
-
 }
 
 randomBtn.addEventListener('click', fetchRandom)
@@ -77,10 +72,7 @@ async function fetchRandom(e) {
         <i>${data.enhanced_description}</i>
         </div>
         `
-
-
     } catch (error) {
         console.log(error)
     }
 }
-
